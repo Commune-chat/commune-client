@@ -1,0 +1,19 @@
+.navbar-container {
+    height: 100%;
+    min-width: 100vw;
+
+    .navbar-items {
+        display: flex;
+        gap: min(calc(20vw - 5em), 20em);
+
+
+        [class$="-item"] {
+            color: black;
+            width: 3em;
+            height: 3em;
+            &:active {
+                color: chocolate; 
+            }
+        }
+    }
+}
