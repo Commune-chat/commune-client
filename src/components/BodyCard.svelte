@@ -1,20 +1,17 @@
 <script>
-    export let shown = false;
     export let isContainer = false;
 </script>
 
 <svelte:options accessors={true}/>
 
-{#if shown}
-    {#if isContainer}
-        <div class="only-container">
-            <slot/>
-        </div> 
-    {:else}
-        <div class="body-card-container">
-            <slot/>
-        </div>
-    {/if}
+{#if isContainer}
+    <div class="only-container">
+        <slot/>
+    </div> 
+{:else}
+    <div class="body-card-container">
+        <slot/>
+    </div>
 {/if}
 
 <style lang="scss">
@@ -30,7 +27,6 @@
         max-height: 90%;
         min-width: 90%;
         margin: 12px;
-        transition: all .2s ease-in-out 1s;
     }
     .only-container {
         position: relative;

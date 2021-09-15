@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { fly, fade } from "svelte/transition";
 
   import Navbar from "./Components/navbar/Navbar.svelte";
   import BodyCard from "./Components/BodyCard.svelte";
@@ -20,23 +21,37 @@
 
 <div class="container" id="container">
   <Community bind:activeCommunity/>
+  {#if home}
+    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+      <BodyCard>
+        Home
+      </BodyCard>
+    </div>
+  {/if}
+  
+  {#if communities}
+    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+      <BodyCard isContainer={true}>
+        <Communities bind:activeCommunity/>
+      </BodyCard>
+    </div>
+  {/if}
 
+  {#if announcements}
+    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+      <BodyCard>
+        Announcements
+      </BodyCard>
+    </div>
+  {/if}
 
-  <BodyCard bind:shown={home}>
-    Home
-  </BodyCard>
-
-  <BodyCard bind:shown={communities} isContainer={true}>
-    <Communities bind:activeCommunity/>
-  </BodyCard>
-
-  <BodyCard bind:shown={announcements}>
-    Announcements
-  </BodyCard>
-
-  <BodyCard bind:shown={profile}>
-    Profile
-  </BodyCard>
+  {#if profile}
+    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+      <BodyCard>
+        Profile
+      </BodyCard>
+    </div>
+  {/if}
 
   <div class="navbar">
     <Navbar bind:home bind:communities bind:announcements bind:profile/>

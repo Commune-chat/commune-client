@@ -14,7 +14,7 @@
     }
 </script>
 
-<div class="card-container" on:click={() => createCommunity()} transition:slide>
+<div class="card-container" on:click={() => createCommunity()} in:slide>
     <div class="card-header">
         <img src="{community.icon}" alt="community logo">
         {#if community.members}

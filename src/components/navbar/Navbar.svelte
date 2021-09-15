@@ -61,6 +61,7 @@
         z-index: 100;
         min-height: 100%;
         min-width: 100%;
+        flex: 0 1 auto;
         .navbar-items {
             height: 100%;
             width: 100%;
