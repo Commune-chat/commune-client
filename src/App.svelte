@@ -15,6 +15,17 @@
 
   let activeCommunity = null;
 
+  function cleanTransition() {
+    if (home == null) {
+      home = true;
+    } else if (communities == null) {
+      communities = true;
+    } else if (announcements == null) {
+      announcements = true;
+    } else if (profile == null) {
+      profile = true;
+    }
+  }
   
 </script>
 
@@ -22,7 +33,11 @@
 <div class="container" id="container">
   <Community bind:activeCommunity/>
   {#if home}
-    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+    <div style="width:100%;height:100%;" 
+    in:fly="{{ x: -500, duration: 500, delay: 200 }}" 
+    out:fly="{{ x: 500, duration: 200 }}"
+    on:outroend="{() => cleanTransition()}"
+    >
       <BodyCard>
         Home
       </BodyCard>
@@ -30,7 +45,11 @@
   {/if}
   
   {#if communities}
-    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+    <div style="width:100%;height:100%;" 
+    in:fly="{{ x: -500, duration: 500, delay: 200 }}" 
+    out:fly="{{ x: 500, duration: 200 }}"
+    on:outroend="{() => cleanTransition()}"
+    >
       <BodyCard isContainer={true}>
         <Communities bind:activeCommunity/>
       </BodyCard>
@@ -38,7 +57,11 @@
   {/if}
 
   {#if announcements}
-    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+    <div style="width:100%;height:100%;" 
+    in:fly="{{ x: -500, duration: 500, delay: 200 }}" 
+    out:fly="{{ x: 500, duration: 200 }}"
+    on:outroend="{() => cleanTransition()}"
+    >
       <BodyCard>
         Announcements
       </BodyCard>
@@ -46,7 +69,11 @@
   {/if}
 
   {#if profile}
-    <div style="width:100%;height:100%;" in:fly="{{ x: -500, duration: 500, delay: 200 }}" out:fly="{{ x: 500, duration: 200 }}">
+    <div style="width:100%;height:100%;" 
+    in:fly="{{ x: -500, duration: 500, delay: 200 }}" 
+    out:fly="{{ x: 500, duration: 200 }}"
+    on:outroend="{() => cleanTransition()}"
+    >
       <BodyCard>
         Profile
       </BodyCard>

@@ -8,7 +8,7 @@
     export const showElement = (el) => {
     switch (el) {
       case "home":
-        home = true;
+        home = null;
         communities = false;
         announcements = false;
         profile = false;
@@ -16,7 +16,7 @@
 
       case "communities":
         home = false;
-        communities = true;
+        communities = null;
         announcements = false;
         profile = false;
         break;
@@ -24,7 +24,7 @@
       case "announcements":
         home = false;
         communities = false;
-        announcements = true;
+        announcements = null;
         profile = false;
         break;
 
@@ -32,10 +32,8 @@
         home = false;
         communities = false;
         announcements = false;
-        profile = true;
+        profile = null;
         break;
-
-
     }
   }
 </script>
