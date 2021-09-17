@@ -33,21 +33,13 @@
   let activeCommunity = null;
 
   function getIndexY(o, io) {
-    console.log(`lastElement: ${lastElement}`);
-    console.log(`o: ${o}`);
-    console.log(`_lastElement: ${_lastElement}`);
-    console.log(`nextElement: ${nextElement}`);
     if (o==_lastElement&&o>nextElement) {
-      console.log(`${_lastElement} -> ${o}: -500 // o==_lastElement&&o>nextElement // ${io}`);
       return 500;
     } else if (o==_lastElement&&o<nextElement) {
-      console.log(`${_lastElement} -> ${o}: 500 // o==_lastElement&&o<_lastElement // ${io}`);
       return -500;
     } else if (o>_lastElement) {
-      console.log(`${_lastElement} -> ${o}: 500 // o>_lastElement // ${io}`);
       return 500;
     } else {
-      console.log(`${_lastElement} -> ${o}: -500 // else // ${io}`);
       return -500;
     }
   }
