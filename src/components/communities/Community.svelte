@@ -19,7 +19,9 @@
         out:fade="{{ duration: 150 }}"
         class="community-inner"
     >
-      <h1>HI</h1>  
+      <div class="community-page">
+
+      </div>  
     </div>
         
 {/if}
