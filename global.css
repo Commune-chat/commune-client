@@ -1,22 +1,34 @@
 :root {
-    --main-font-color: rgba(0,0,0,.8);
-    --background: #ECECEC;
-    --background2: white;
-    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --scrollbar-thumb-color: rgb(128,128,128);
+  --main-font-color: rgba(0, 0, 0, 0.8);
+  --background: #ececec;
+  --background2: white;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --scrollbar-thumb-color: rgb(128, 128, 128);
+  --gradient-main-fill: rgb(235, 13, 230);
+  --gradient-main: linear-gradient(
+    38deg,
+    rgba(235, 13, 230, 1) 0%,
+    rgba(27, 139, 187, 1) 45%,
+    rgba(45, 253, 97, 1) 100%
+  );
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: var(--main-font-color);
-    font-family: var(--font);
-    font-weight: 600;
-    background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--main-font-color);
+  font-family: var(--font);
+  font-weight: 600;
+  background-color: var(--background);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
 }

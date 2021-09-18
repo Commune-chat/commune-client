@@ -14,3 +14,16 @@ export type communityType = {
     members: memberType[] | null,
     icon: string,
 }
+
+
+type appColors = {
+    background: string,
+    main: string,
+    fontColor: string,
+    navFontHover: string,
+}
+
+export type theme = {
+    colors: appColors,
+    font: number,
+}

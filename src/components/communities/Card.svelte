@@ -1,11 +1,11 @@
 <script lang="ts">
-    //import { communityType } from '../../ts/types/commune.ts';
+    import { communityType } from '../../ts/types/commune.ts';
     import { slide } from "svelte/transition";
 
     export let activeCommunity;
     export let community: communityType = {
         name: "test",
-        members: null,
+        members: [null],
         id: 0,
         icon: "icon",
     };

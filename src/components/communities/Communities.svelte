@@ -1,22 +1,23 @@
 <script lang="ts">
-    //import { communityType } from "../../ts/types/commune.ts";
+    import { fade } from "svelte/transition";
     import Card from "./Card.svelte"
     export let activeCommunity;
+    export let showCommunities;
     export let communities = [
         {
-            name: "h",
+            name: "Community 1",
             id: 0,
             members: null,
             icon: "h"
         },
         {
-            name: "h",
+            name: "Community 2",
             id: 0,
             members: null,
             icon: "h"
         },
         {
-            name: "h",
+            name: "Community 3",
             id: 0,
             members: null,
             icon: "h"
@@ -25,13 +26,15 @@
 </script>
 <div class="comcard-container">
     <div class="comcard-header">
-        <h3>
+        <h3 in:fade="{{delay: 200}}">
             Communities
         </h3>
     </div>
-    {#each communities as community}
-        <Card bind:community bind:activeCommunity/>
-    {/each}
+    {#if showCommunities}
+        {#each communities as community}
+            <Card bind:community bind:activeCommunity/>
+        {/each}
+    {/if}
 </div>
 
 
